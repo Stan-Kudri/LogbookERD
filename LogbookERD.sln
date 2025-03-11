@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.35906.104 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogbookERD.Core", "LogbookERD.Core\LogbookERD.Core.csproj", "{E3DA5914-B149-4DA5-899B-8EFFC4163AFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogbookERD.WPF", "LogbookERD.WPF\LogbookERD.WPF.csproj", "{143C4E64-28AD-43D4-8CD4-B763E420E639}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3DA5914-B149-4DA5-899B-8EFFC4163AFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3DA5914-B149-4DA5-899B-8EFFC4163AFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3DA5914-B149-4DA5-899B-8EFFC4163AFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3DA5914-B149-4DA5-899B-8EFFC4163AFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{143C4E64-28AD-43D4-8CD4-B763E420E639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{143C4E64-28AD-43D4-8CD4-B763E420E639}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{143C4E64-28AD-43D4-8CD4-B763E420E639}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{143C4E64-28AD-43D4-8CD4-B763E420E639}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8A947D47-17B0-401C-AF18-F04BA7BF817E}
+	EndGlobalSection
+EndGlobal
