@@ -5,13 +5,13 @@ namespace LogbookERD.Core.Data.Identificator
     public abstract class BaseNumberGenerator
     {
         //Цех владелец оборудования
-        public DivisionSmartEnum Division { get; set; }
+        public required DivisionSmartEnum Division { get; set; }
 
         //Исполнитель работ
-        public PerformerWork Performer { get; set; }
+        public required PerformerWork Performer { get; set; }
 
         //Тип исполнительной документации
-        public DocumentationSmartEnum Documentation { get; set; }
+        public required DocumentationSmartEnum Documentation { get; set; }
 
         //Дата ремонта
         public DateTime DateRepair { get; set; }
@@ -20,7 +20,7 @@ namespace LogbookERD.Core.Data.Identificator
         public DateTime DateRegistration { get; set; }
 
         //К какому типу объекта относиться оборудование
-        public RepairFacility RepairFacility { get; set; }
+        public required RepairFacility RepairFacility { get; set; }
 
         //Изменение года регистрации документа
         public int? ChangeYearRepair { get; set; } = null;

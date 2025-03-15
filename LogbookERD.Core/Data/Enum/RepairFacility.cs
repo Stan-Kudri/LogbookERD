@@ -5,9 +5,9 @@ namespace LogbookERD.Core.Data.Enum
 {
     public class RepairFacility : SmartEnum<RepairFacility>
     {
-        public static RepairFacility GC = new RepairFacility("GC", "ОСО", "Общестанционное оборудование", 0);
-        public static RepairFacility EBFirst = new RepairFacility("EBFirst", "ЭБ1", "Энергоблок 1", 1);
-        public static RepairFacility EBSecond = new RepairFacility("EBSecond", "ЭБ2", "Энергоблок 2", 2);
+        public static RepairFacility GC = new("GC", "ОСО", "Общестанционное оборудование", 0);
+        public static RepairFacility EBFirst = new("EBFirst", "ЭБ1", "Энергоблок 1", 1);
+        public static RepairFacility EBSecond = new("EBSecond", "ЭБ2", "Энергоблок 2", 2);
 
         private RepairFacility(string name, string nameRussion, string abbreviationDecoding, int value)
              : base(name, value)
