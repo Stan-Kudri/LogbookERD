@@ -3,6 +3,6 @@
     public class Entity
     {
         //Идентификатор ИРД
-        public Guid RepairDocumentationID { get; set; }
+        public Guid Id { get; set; }
     }
 }

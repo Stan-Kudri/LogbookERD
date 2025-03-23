@@ -5,7 +5,7 @@ namespace LogbookERD.Core.Data.Enum
 {
     public class TypeDocumentation : SmartEnum<TypeDocumentation>
     {
-        public static TypeDocumentation Checklist = new("", "Чек-лист к Исполнительной Ремонтной Документации", 0);
+        public static TypeDocumentation Unknown = new("Unknown", "", 0);
         public static TypeDocumentation RepairCompletionAct = new("АВР", "Акт о выполненных  работах по ремонту оборудования", 1);
         public static TypeDocumentation RepairCompletionActS4 = new("АВР4", "Акт о выполненных  работах по ремонту оборудования (класс безопасности 4)", 2);
         public static TypeDocumentation RepairActEquipmentList = new("ПО", "Перечень оборудования к акту о выполненных работах по ремонту оборудования", 3);
