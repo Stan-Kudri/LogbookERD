@@ -4,7 +4,7 @@ using System.Data.Entity;
 
 namespace LogbookERD.Core.Repository
 {
-    public class PerfomerRepository
+    public class PerfomerRepository : IRepository<Perfomer>
     {
         private readonly AppDBContext _appDBContext;
 

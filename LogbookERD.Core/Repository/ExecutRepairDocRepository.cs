@@ -3,7 +3,7 @@ using LogbookERD.Core.Models;
 
 namespace LogbookERD.Core.Repository
 {
-    public class ExecutRepairDocRepository
+    public class ExecutRepairDocRepository : IRepository<ExecutRepairDocumentation>
     {
         private readonly AppDBContext _appDBContext;
 
