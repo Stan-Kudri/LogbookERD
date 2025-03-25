@@ -1,4 +1,4 @@
-﻿namespace LogbookERD.Core.Models
+﻿namespace LogbookERD.Core.Models.ItemRepository
 {
     public class ExecutRepairDocumentation : Entity
     {

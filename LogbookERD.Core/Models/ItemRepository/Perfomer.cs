@@ -1,6 +1,6 @@
 ﻿using LogbookERD.Core.Data.Enum;
 
-namespace LogbookERD.Core.Models
+namespace LogbookERD.Core.Models.ItemRepository
 {
     public class Perfomer : Entity
     {

@@ -1,6 +1,6 @@
 ﻿using LogbookERD.Core.DBContext.Configurations.Equipments;
-using LogbookERD.Core.Models;
-using LogbookERD.Core.Models.Equipments;
+using LogbookERD.Core.Models.ItemRepository;
+using LogbookERD.Core.Models.ItemRepository.Equipments;
 using Microsoft.EntityFrameworkCore;
 
 namespace LogbookERD.Core.DBContext

@@ -1,4 +1,6 @@
-﻿namespace LogbookERD.Core.Models.Equipments
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace LogbookERD.Core.Models.ItemRepository.Equipments
 {
     public class EquipmentKKS : Entity
     {
@@ -7,6 +9,7 @@
         }
 
         //Оборудование
+        [RegularExpression(@"^[a-zA-Z0-9]+$", ErrorMessage = "Only Latin letters and numbers are allowed.")]
         public required string KKS { get; set; }
 
         //Идентификатор наименования оборудования

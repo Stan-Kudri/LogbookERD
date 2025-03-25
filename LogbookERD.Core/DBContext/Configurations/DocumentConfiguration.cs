@@ -1,5 +1,5 @@
 ﻿using LogbookERD.Core.Extension;
-using LogbookERD.Core.Models;
+using LogbookERD.Core.Models.ItemRepository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -15,6 +15,7 @@ namespace LogbookERD.Core.DBContext.Configurations
                                                      .HasColumnType("DATETIME")
                                                      .HasColumnName("DateRegistration")
                                                      .HasDefaultValue(DateTime.Now);
+            builder.Property(e => e.TypeDocumentation).IsRequired().HasColumnName("Type").SmartEnumConversion();
             builder.Property(e => e.Division).IsRequired().HasColumnName("division").SmartEnumConversion();
             builder.Property(e => e.RepairFacility).IsRequired().HasColumnName("repairFacility").SmartEnumConversion();
             builder.Property(e => e.Note).HasColumnName("note");

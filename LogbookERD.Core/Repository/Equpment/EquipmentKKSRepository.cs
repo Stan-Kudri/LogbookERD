@@ -1,5 +1,5 @@
 ﻿using LogbookERD.Core.DBContext;
-using LogbookERD.Core.Models.Equipments;
+using LogbookERD.Core.Models.ItemRepository.Equipments;
 using System.Data.Entity;
 
 namespace LogbookERD.Core.Repository.Equpment
@@ -47,6 +47,14 @@ namespace LogbookERD.Core.Repository.Equpment
             oldItem.KKS = equipmentKKS.KKS;
             oldItem.EquipmentNameId = equipmentKKS.EquipmentNameId;
             _appDBContext.SaveChanges();
+        }
+
+        public void AddRange(List<EquipmentKKS> equipmentKKS)
+        {
+            foreach (var item in equipmentKKS)
+            {
+                _appDBContext.Add(item);
+            }
         }
 
         public IQueryable<EquipmentKKS> GetQueryableAll()

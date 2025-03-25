@@ -1,28 +1,45 @@
 ﻿using LogbookERD.Core.Data.Enum;
-using LogbookERD.Core.Models.Equipments;
+using LogbookERD.Core.Models.ItemRepository.Equipments;
 
-namespace LogbookERD.Core.Models
+namespace LogbookERD.Core.Models.ItemRepository
 {
     public class Document : Entity
     {
+        public Document()
+        {
+        }
+
+        public Document(TypeDocumentation type,
+                        DateTime repairDateComplit,
+                        Division division,
+                        RepairFacility repairFacility,
+                        Perfomer perfomerWork,
+                        int ordinalNumber,
+                        string note = "")
+        {
+            TypeDocumentation = type;
+            RepairComplitionDate = repairDateComplit;
+            Division = division;
+            RepairFacility = repairFacility;
+            Perfomer = perfomerWork;
+            Note = note;
+            OrdinalNumber = ordinalNumber;
+        }
+
         //Тип исполнительной документации
-        private readonly TypeDocumentation _documentation;
-
-        public Document() => _documentation = TypeDocumentation.Unknown;
-
-        public Document(TypeDocumentation documentation) => _documentation = documentation;
+        public TypeDocumentation TypeDocumentation { get; set; }
 
         //Дата ремонта
-        public required DateTime RepairComplitionDate { get; set; }
+        public DateTime RepairComplitionDate { get; set; }
 
         //Цех владелец оборудования
-        public required Division Division { get; set; }
+        public Division Division { get; set; }
 
         //Дата регистрации
         public DateTime DateRegistration { get; set; } = DateTime.Now;
 
         //К какому типу объекта относиться оборудование
-        public required RepairFacility RepairFacility { get; set; }
+        public RepairFacility RepairFacility { get; set; }
 
         //Примечание
         public string Note { get; set; } = string.Empty;
@@ -53,7 +70,7 @@ namespace LogbookERD.Core.Models
         public ExecutRepairDocumentation ERD { get; set; }
 
         public override string ToString()
-            => $"{OrdinalNumber}/{Division.Value}{_documentation.Name}({RepairFacility.Value})-{YearRegistration}";
+            => $"{OrdinalNumber}/{Division.Value}{TypeDocumentation.Name}({RepairFacility.Value})-{YearRegistration}";
 
         private int YearRegistration => ChangeYearRepair == null ? RepairComplitionDate.Year : (int)ChangeYearRepair;
     }

@@ -1,4 +1,4 @@
-﻿namespace LogbookERD.Core.Models.Equipments
+﻿namespace LogbookERD.Core.Models.ItemRepository.Equipments
 {
     public class EquipmentInDocumentation : Entity
     {

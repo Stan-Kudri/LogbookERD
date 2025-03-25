@@ -1,4 +1,4 @@
-﻿using LogbookERD.Core.Models.Equipments;
+﻿using LogbookERD.Core.Models.ItemRepository.Equipments;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

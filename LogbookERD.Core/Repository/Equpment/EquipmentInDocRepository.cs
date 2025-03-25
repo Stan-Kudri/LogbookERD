@@ -1,5 +1,5 @@
 ﻿using LogbookERD.Core.DBContext;
-using LogbookERD.Core.Models.Equipments;
+using LogbookERD.Core.Models.ItemRepository.Equipments;
 using System.Data.Entity;
 
 namespace LogbookERD.Core.Repository.Equpment
@@ -28,7 +28,7 @@ namespace LogbookERD.Core.Repository.Equpment
         public void Remove(Guid id)
         {
             var equipment = _appDBContext.EquipmentInDocumentations.FirstOrDefault(e => e.Id == id)
-                            ?? throw new InvalidOperationException("Item with ID not found");
+                            ?? throw new InvalidOperationException("Item with ID not found.");
 
             _appDBContext.EquipmentInDocumentations?.Remove(equipment);
             _appDBContext.SaveChanges();
@@ -42,7 +42,7 @@ namespace LogbookERD.Core.Repository.Equpment
             }
 
             var oldItem = _appDBContext.EquipmentInDocumentations.FirstOrDefault(e => e.Id == equipment.Id)
-                            ?? throw new InvalidOperationException("Item with ID not found");
+                            ?? throw new InvalidOperationException("Item with ID not found.");
 
             oldItem.ExecutRepairDocId = equipment.ExecutRepairDocId;
             _appDBContext.SaveChanges();

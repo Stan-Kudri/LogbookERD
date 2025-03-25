@@ -1,5 +1,5 @@
 ﻿using LogbookERD.Core.DBContext;
-using LogbookERD.Core.Models;
+using LogbookERD.Core.Models.ItemRepository;
 
 namespace LogbookERD.Core.Repository
 {
@@ -27,7 +27,7 @@ namespace LogbookERD.Core.Repository
         public void Remove(Guid id)
         {
             var erd = _appDBContext.ExecutRepairDocumentations.FirstOrDefault(e => e.Id == id)
-                            ?? throw new InvalidOperationException("Item with ID not found");
+                            ?? throw new InvalidOperationException("Item with ID not found.");
 
             _appDBContext.ExecutRepairDocumentations?.Remove(erd);
             _appDBContext.SaveChanges();
@@ -42,7 +42,7 @@ namespace LogbookERD.Core.Repository
             }
 
             var oldItem = _appDBContext.ExecutRepairDocumentations.FirstOrDefault(e => e.Id == erd.Id)
-                            ?? throw new InvalidOperationException("Item with ID not found");
+                            ?? throw new InvalidOperationException("Item with ID not found.");
 
             _appDBContext.SaveChanges();
         }
