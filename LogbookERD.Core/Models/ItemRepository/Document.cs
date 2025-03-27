@@ -15,6 +15,9 @@ namespace LogbookERD.Core.Models.ItemRepository
                         RepairFacility repairFacility,
                         Perfomer perfomerWork,
                         int ordinalNumber,
+                        Guid perfomerId,
+                        Guid equipmentInDocId,
+                        Guid executRepairDocId,
                         string note = "")
         {
             TypeDocumentation = type;
@@ -24,6 +27,10 @@ namespace LogbookERD.Core.Models.ItemRepository
             Perfomer = perfomerWork;
             Note = note;
             OrdinalNumber = ordinalNumber;
+            PerfomerId = perfomerId;
+            EquipmentInDocId = equipmentInDocId;
+            ExecutRepairDocId = executRepairDocId;
+            SetRegisterNumber();
         }
 
         //Тип исполнительной документации
@@ -69,8 +76,8 @@ namespace LogbookERD.Core.Models.ItemRepository
 
         public ExecutRepairDocumentation ERD { get; set; }
 
-        public override string ToString()
-            => $"{OrdinalNumber}/{Division.Value}{TypeDocumentation.Name}({RepairFacility.Value})-{YearRegistration}";
+        public string SetRegisterNumber()
+            => RegisterNumber = $"{OrdinalNumber}/{Division.Value}{TypeDocumentation.Name}({RepairFacility.Value})-{YearRegistration}";
 
         private int YearRegistration => ChangeYearRepair == null ? RepairComplitionDate.Year : (int)ChangeYearRepair;
     }

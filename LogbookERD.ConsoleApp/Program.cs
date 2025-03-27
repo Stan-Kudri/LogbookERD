@@ -20,8 +20,15 @@ using var scope = contain.CreateScope();
 var service = scope.ServiceProvider.GetRequiredService<ExecuteRepairDocService>();
 
 var equipment = new EquipmentModel("Арматура КСА", new List<string> { "10KAA12AA515", "10KAA12AA516" });
-var documents = new DocumentModel(new List<TypeDocumentation>() { TypeDocumentation.EquipmentClosureProtocol, TypeDocumentation.RepairCompletionAct, TypeDocumentation.TechnicalConditionAct },
-                                  new DateTime(2020, 5, 6), Division.ReactorShop, RepairFacility.EBFirst, new Perfomer() { Perfomers = { PerformerWork.BAS, } });
+
+var typeDocuments = new List<TypeDocumentation>() { TypeDocumentation.EquipmentClosureProtocol, TypeDocumentation.RepairCompletionAct, TypeDocumentation.TechnicalConditionAct };
+var listPerfomers = new List<PerformerWork>
+{
+    PerformerWork.BAS
+};
+var perfomer = new Perfomer(listPerfomers);
+var documents = new DocumentModel(typeDocuments, new DateTime(2020, 5, 6),
+                                  Division.ReactorShop, RepairFacility.EBFirst, perfomer);
 
 service.Add(equipment, documents);
 

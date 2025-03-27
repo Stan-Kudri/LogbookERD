@@ -47,7 +47,8 @@ namespace LogbookERD.Core.Service
                 throw new ArgumentNullException("Incorrect data.", nameof(document));
             }
 
-            var executeRepDocId = _appDBContext.ExecutRepairDocumentations.FirstOrDefault(e => e == _executRepairDocumentation)?.Id;
+            var executeRepDoc = _appDBContext.ExecutRepairDocumentations.FirstOrDefault(e => e == _executRepairDocumentation)
+                                                                        ?? throw new ArgumentException("Execute repair documentation is not found.");
 
             _perfomerRepository.Add(document.Perfomer);
             var perfomerId = _appDBContext.Perfomer.FirstOrDefault(e => e == document.Perfomer)?.Id;
@@ -59,8 +60,10 @@ namespace LogbookERD.Core.Service
                                                                                         && e.OrdinalNumber != 0);
                 var orderNumber = lastItemRegistration != null ? lastItemRegistration.OrdinalNumber + 1 : 1;
                 document.ExecutRepairDocId = _executRepairDocumentation.Id;
-                var equipmentInDocId = _appDBContext.EquipmentInDocumentations.FirstOrDefault(e => e.ExecutRepairDocId == _executRepairDocumentation.Id) ?? throw new InvalidOperationException("No identifier found for ERD.");
+                var equipmentInDocId = _appDBContext.EquipmentInDocumentations.FirstOrDefault(e => e.ExecutRepairDocId == _executRepairDocumentation.Id)
+                                                                              ?? throw new InvalidOperationException("No identifier found for ERD.");
                 document.EquipmentInDocId = equipmentInDocId.Id;
+                document.ExecutRepairDocId = executeRepDoc.Id;
                 _documentRepository.Add(document.GetDocument(type, orderNumber));
             }
         }

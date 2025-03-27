@@ -65,6 +65,10 @@ namespace LogbookERD.Core.Models
         public ExecutRepairDocumentation ERD { get; set; }
 
         public Document GetDocument(TypeDocumentation type, int orderNumber)
-            => new Document(type, RepairComplitionDate, Division, RepairFacility, Perfomer, orderNumber, Note);
+            => new Document(type, RepairComplitionDate,
+                            Division, RepairFacility,
+                            Perfomer, orderNumber,
+                            PerfomerId, EquipmentInDocId,
+                            ExecutRepairDocId, Note);
     }
 }
